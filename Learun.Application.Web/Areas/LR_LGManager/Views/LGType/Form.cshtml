@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "多语言映射";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap">
+    <div class="col-xs-12 lr-form-item"  data-table="LR_Lg_Type" >
+        <div class="lr-form-item-title">名称<font face="宋体">*</font></div>
+        <input id="F_Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="LR_Lg_Type" >
+        <div class="lr-form-item-title">编码<font face="宋体">*</font></div>
+        <input id="F_Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull"  />
+    </div>
+    @*<div class="col-xs-12 lr-form-item"  data-table="LR_Lg_Type" >
+        <div class="lr-form-item-title">是否主语言</div>
+        <input id="F_IsMain" type="text" class="form-control"  />
+    </div>*@
+</div>
+@Html.AppendJsFile("/Areas/LR_LGManager/Views/LGType/Form.js")

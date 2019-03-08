@@ -1,0 +1,3 @@
+cordova.define("cordova-plugin-photo-library.async_map", function(require, exports, module) {
+
+});

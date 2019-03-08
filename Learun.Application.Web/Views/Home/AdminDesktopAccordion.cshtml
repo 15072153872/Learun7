@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "桌面设置";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="/Content/jquery/jquery-1.10.2.min.js"></script>
+<script src="/Content/echarts/echarts.min.js"></script>
+
+@Html.AppendCssFile("/Views/Home/AdminDesktopAccordion/Index.css")
+<div class="lr-desktop-panel">
+    <div class="lr-desktop-panel-left" id="lr_desktop_list">
+    </div>
+    <div class="lr-desktop-panel-right">
+        <div class="lr-desktop-chat">
+            <div class="lr-desktop-chat-panel">
+                <div class="lr-desktop-chat-panel-title">
+                </div>
+                <div class="lr-desktop-chat-panel-content">
+                </div>
+            </div>
+        </div>
+        <div class="lr-desktop-target">
+            <div class="title">统计指标</div>
+            <div class="content" id="lr_target_content">
+
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Views/Home/AdminDesktopAccordion/Index.js")
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+﻿.lr-wrap {
+    width: 400px;
+    position: relative;
+    margin-bottom: 10px
+}
+
+.lr-wrap .text {
+    margin-top: 30px;
+    line-height: 14px;
+    color: #75777A;
+    text-align: center
+}
+
+.lr-wrap .text div {
+    margin-top: 10px
+}
+
+.lr-wrap .file {
+    width: 400px;
+    height: 60px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 16.5px 40px
+}
+
+#file1 {
+    background-color: #1d1d1d
+}
+
+#file2 {
+    background-color: #24A1E7
+}
+
+#file3 {
+    background-color: #3286ed
+}
+
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer!important
+}
+
+.lr-wrap img {
+    width: 320px;
+    height: 27px;
+    cursor: pointer
+}

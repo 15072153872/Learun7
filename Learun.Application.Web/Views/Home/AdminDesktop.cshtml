@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "桌面设置";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="~/Content/echarts/echarts.min.js"></script>
+
+@Html.AppendCssFile("/Views/Home/AdminDesktop/Index.css")
+<div class="lr-desktop-panel">
+    <div class="col-xs-12">
+        <div class="portal-panel-title">
+            <i class="fa fa-balance-scale"></i>&nbsp;&nbsp;统计指标
+        </div>
+        <div class="portal-panel-content" id="lr_target" >
+        </div>
+    </div>
+</div>
+
+
+
+@Html.AppendJsFile("/Views/Home/AdminDesktop/Index.js")

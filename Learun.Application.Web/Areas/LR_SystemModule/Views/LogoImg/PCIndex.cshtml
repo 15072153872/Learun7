@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "logo设置";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<link href="/Content/webuploader/webuploader.css" rel="stylesheet" />
+ @Html.AppendCssFile("/Areas/LR_SystemModule/Views/LogoImg/PCIndex.css")
+<div class="lr-rblock" style="padding:10px;">
+    <div class="lr-rblock" style="background-color:#fff;border:1px solid #ccc;padding:20px;">
+        <div class="lr-wrap">
+            <div class="file" id="file">
+                <input type="file" name="uploadFile" id="uploadFile">
+            </div>
+            <div class="text">
+                建议上传图片尺寸为320x27，大小不超过2M。
+                <div><a class="btn btn-primary" id="lr_save_btn"><i class="fa fa-save"></i>&nbsp;保&nbsp;存(经典)</a></div>
+            </div>
+        </div>
+
+        <div class="lr-wrap">
+            <div class="file" id="file1" >
+                <input type="file" name="uploadFile1" id="uploadFile1">
+            </div>
+            <div class="text">
+                建议上传图片尺寸为320x27，大小不超过2M。
+                <div><a class="btn btn-primary" id="lr_save_btn1"><i class="fa fa-save"></i>&nbsp;保&nbsp;存(风尚)</a></div>
+            </div>
+        </div>
+
+        <div class="lr-wrap">
+            <div class="file" id="file2">
+                <input type="file" name="uploadFile2" id="uploadFile2">
+            </div>
+            <div class="text">
+                建议上传图片尺寸为320x27，大小不超过2M。
+                <div><a class="btn btn-primary" id="lr_save_btn2"><i class="fa fa-save"></i>&nbsp;保&nbsp;存(炫动)</a></div>
+            </div>
+        </div>
+
+        <div class="lr-wrap">
+            <div class="file" id="file3">
+                <input type="file" name="uploadFile3" id="uploadFile3">
+            </div>
+            <div class="text">
+                建议上传图片尺寸为320x27，大小不超过2M。
+                <div><a class="btn btn-primary" id="lr_save_btn3"><i class="fa fa-save"></i>&nbsp;保&nbsp;存(飞扬)</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/Content/webuploader/webuploader.nolog.min.js"></script>
+@Html.AppendJsFile("/Areas/LR_SystemModule/Views/LogoImg/PCIndex.js")
+
+

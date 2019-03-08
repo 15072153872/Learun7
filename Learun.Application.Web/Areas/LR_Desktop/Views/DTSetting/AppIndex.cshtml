@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "移动端桌面设置";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="~/Content/echarts/echarts.js"></script>
+
+@Html.AppendCssFile("/Areas/LR_Desktop/Views/DTSetting/App/AppIndex.css")
+
+
+<div class="lr-rblock" style="padding:10px;">
+    <div class="lr-rblock" style="border:1px solid #ccc;background-color:#fff;padding:5px;" id="appContent">
+        <div class="phone">
+            <div class="content">
+                <div class="lr-black-panel">
+                    <div class="lr-title">统计数据</div>
+                    <div class="lr-content lr-flex-content">
+                        <div class="targetItem addItem" id="lr-add-target">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lr-black-panel lr-black-addbtn" id="lr-add-list">
+                    <i class="fa fa-plus"></i>添加消息列表
+                </div>
+
+                <div class="lr-black-panel lr-black-addbtn" id="lr-add-chart">
+                    <i class="fa fa-plus"></i>添加图表
+                </div>
+
+            </div>
+            <div class="statusbar"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@Html.AppendJsFile("/Areas/LR_Desktop/Views/DTSetting/App/AppIndex.js")
+

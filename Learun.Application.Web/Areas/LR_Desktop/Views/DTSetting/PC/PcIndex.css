@@ -1,0 +1,292 @@
+﻿body {
+    padding: 10px;
+    background: #f8f8f8
+}
+
+.lr-desktop-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0 22px;
+    border-radius: 2px
+}
+
+.lr-uitheme-accordion .lr-desktop-panel {
+    border-radius: 0
+}
+
+.lr-uitheme-windos .lr-desktop-panel {
+    border-radius: 3px
+}
+
+.lr-uitheme-default .lr-desktop-panel {
+    border-radius: 3px
+}
+
+.portal-panel-title {
+    padding-top: 10px;
+    line-height: 45px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    color: #4a4a4a;
+    font-weight: 300;
+    font-size: 14px
+}
+
+.portal-panel-content {
+    position: relative;
+    width: 100%;
+    padding: 20px 5px 5px 5px
+}
+
+.lr-item-20 {
+    position: relative;
+    float: left;
+    width: 260px;
+    padding: 10px
+}
+
+    .lr-item-20:nth-of-type(5n+1) .task-stat {
+        background: #578ebe
+    }
+
+    .lr-item-20:nth-of-type(5n+2) .task-stat {
+        background: #e35b5a
+    }
+
+    .lr-item-20:nth-of-type(5n+3) .task-stat {
+        background: #44b6ae
+    }
+
+    .lr-item-20:nth-of-type(5n+4) .task-stat {
+        background: #8775a7
+    }
+
+    .lr-item-20:nth-of-type(5n) .task-stat {
+        background: #3598dc
+    }
+
+    .lr-item-20:nth-of-type(5n+1) .more {
+        background: #4884b8
+    }
+
+    .lr-item-20:nth-of-type(5n+2) .more {
+        background: #e04a49
+    }
+
+    .lr-item-20:nth-of-type(5n+3) .more {
+        background: #3ea7a0
+    }
+
+    .lr-item-20:nth-of-type(5n+4) .more {
+        background: #7c699f
+    }
+
+    .lr-item-20:nth-of-type(5n) .more {
+        background: #258fd7
+    }
+
+.task-stat {
+    position: relative;
+    height: 104px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: "Open Sans",sans-serif;
+    overflow: hidden;
+    color: #FFF
+}
+
+    .task-stat .visual {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0 0 10px
+    }
+
+        .task-stat .visual > i {
+            color: #FFF;
+            opacity: .4;
+            filter: alpha(opacity=10);
+            font-size: 60px;
+            line-height: 65px
+        }
+
+    .task-stat .details {
+        position: absolute;
+        right: 10px;
+        top: 10px
+    }
+
+        .task-stat .details .number {
+            text-align: right;
+            font-size: 32px;
+            line-height: 36px;
+            letter-spacing: -1px;
+            margin-bottom: 0;
+            font-weight: 300
+        }
+
+        .task-stat .details .desc {
+            text-align: right;
+            font-size: 15px;
+            padding-top: 5px
+        }
+
+    .task-stat .more {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        clear: both;
+        padding: 4px 10px;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 12px;
+        opacity: .8;
+        filter: alpha(opacity=70);
+        text-decoration: none;
+        color: #FFF;
+        cursor: pointer
+    }
+
+        .task-stat .more > i {
+            display: inline-block;
+            margin-top: 0;
+            float: right;
+            font-size: 15px;
+            color: #fff;
+            opacity: .8
+        }
+
+        .task-stat .more:hover {
+            text-decoration: none;
+            opacity: .9;
+            filter: alpha(opacity=90)
+        }
+
+.lr-msg-line {
+    position: relative;
+    width: 100%;
+    line-height: 39px;
+    border-bottom: 1px solid #ccc
+}
+
+    .lr-msg-line > a {
+        cursor: pointer;
+        color: #333;
+        font-size: 12px
+    }
+
+    .lr-msg-line > label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-bottom: 0;
+        color: #333;
+        font-size: 12px;
+        font-weight: 400
+    }
+
+.lr-chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%
+}
+
+.portal-panel-title .menu {
+    float: right;
+    display: flex;
+    width: 26px;
+    background: transparent;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 22px 20px 0 0
+}
+
+    .portal-panel-title .menu .point {
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border: 1px solid #979797;
+        border-radius: 50%
+    }
+
+.targetItem:hover .tool {
+    display: block
+}
+
+.targetItem .tool {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1d1d1d;
+    color: #fff;
+    display: none;
+    cursor: pointer
+}
+
+    .targetItem .tool div {
+        float: left;
+        width: 50%;
+        height: 100%;
+        position: relative
+    }
+
+        .targetItem .tool div:first-child:after {
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+            top: 5px;
+            width: 1px;
+            content: '';
+            -webkit-transform: scaleX(.5);
+            transform: scaleX(.5);
+            background-color: #fff
+        }
+
+.lr-black-addbtn {
+    height: 40px;
+    line-height: 40px;
+    color: #0188D2;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #0188D2;
+    margin-top: 5px
+}
+
+.portal-panel-title .tool {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 106px;
+    height: 45px
+}
+
+    .portal-panel-title .tool div {
+        float: left;
+        width: 50%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        color: #0188D2;
+        cursor: pointer
+    }
+
+        .portal-panel-title .tool div:first-child:after {
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            top: 15px;
+            width: 1px;
+            content: '';
+            -webkit-transform: scaleX(.5);
+            transform: scaleX(.5);
+            background-color: #0188D2
+        }

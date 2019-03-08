@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>�ճ̹���</title>
+    <script src="~/Content/jquery/plugin/fullcalendar/js/jquery-1.7.2.min.js"></script>
+    <script src="~/Content/jquery/plugin/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/Content/jquery/plugin/fullcalendar/js/fullcalendar.min.js"></script>
+    <link href="~/Content/jquery/plugin/fullcalendar/css/fullcalendar.css" rel="stylesheet" />
+    @Html.AppendCssFile(
+    "/Views/LR_Content/style/lr-common.css",
+    "/Views/LR_Content/style/lr-iframe-index.css"
+    )
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            resize();
+            $('.calendar').fullCalendar({
+                header: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'agendaDay,agendaWeek,month'
+                },
+                monthNamesShort: ["һ��", "����", "����", "����", "����", "����", "����", "����", "����", "ʮ��", "ʮһ��", "ʮ����"],
+                dayNamesShort: ["������", "����һ", "���ڶ�", "������", "������", "������", "������"],
+                buttonText: {
+                    prev: '��һҳ',
+                    next: '��һҳ',
+                    month: '����ͼ',
+                    week: '����ͼ',
+                    day: '����ͼ'
+                },
+                titleFormat: "yyyy��MM��",
+                columnFormat: {
+                    month: 'ddd',
+                    week: 'MM��dd�� ddd',
+                    day: 'MM��dd�� ddd'
+                },
+                allDayText: '����',
+                axisFormat: "HH:00",
+                height: $(window).height() - 55,
+                dayClick: function (date, allDay, jsEvent, view) {
+                    var _date = $.fullCalendar.formatDate(date, 'yyyy-MM-dd');
+                    var _time = $.fullCalendar.formatDate(date, 'HHmm');
+                    if (top.learun.formatDate(_date, 'yyyyMMdd') >= ('@Learun.Util.Time.GetToday("yyyyMMdd")')) {
+                        btn_add(_date, _time);
+                    }
+                },
+                editable: true,
+                eventLimit: true,
+                eventAfterRender: function (event, element, view) {//���ݰ���ȥ�������Ӧ��Ϣ��ҳ����
+                    var fstart = $.fullCalendar.formatDate(event.start, "HH:mm");
+                    var fend = $.fullCalendar.formatDate(event.end, "HH:mm");
+
+                    if (view.name == "month") {//���·�
+                        var evtcontent = '<div class="fc-event-inner fc-event-skin">';
+                        evtcontent += '<span class="fc-event-time">' + fstart + " - " + fend + '</span>';
+                        evtcontent += '<span class="fc-event-title">: ' + event.title + '</span>';
+                        evtcontent += '</div><div class="ui-resizable-handle ui-resizable-e">&nbsp;&nbsp;&nbsp;</div>';
+
+                        element.html(evtcontent);
+                    } else {
+                        var evtcontent = '<div class="fc-event-inner fc-event-skin">';
+                        evtcontent += '<div class="fc-event-head fc-event-skin">';
+                        evtcontent += '<div class="fc-event-time">' + fstart + " - " + fend + event.title + '</div>';
+                        evtcontent += '</div>';
+                        evtcontent += '<div class="fc-event-content"></div>';
+                        evtcontent += '<div class="fc-event-bg"></div>';
+                        evtcontent += '</div>';
+                        element.html(evtcontent);
+                    }
+                },
+                events: (function () {
+                    var _data = [];
+                    $.ajax({
+                        url: top.$.rootUrl + '/LR_OAModule/Schedule/GetList',
+                        type: "get",
+                        dataType: "json",
+                        async: false,
+                        success: function (data) {
+                            _data = data;
+                        }
+                    });
+                    return _data;
+                })()
+            });
+        });
+        function resize() {
+            $('#pageayout').height($(window).height() - 20);
+            $(window).resize(function (e) {
+                window.setTimeout(function () {
+                    $('#pageayout').height($(window).height() - 20);
+                }, 200);
+                e.stopPropagation();
+            });
+        }
+        //����ճ�
+        function btn_add(date, time) {
+            top.learun.layerForm({
+                id: 'form',
+                title: '����ճ�',
+                url: '/LR_OAModule/Schedule/Form?startDate=' + escape(date) + '&startTime=' + time,
+                width: 500,
+                height: 350,
+                callBack: function (id) {
+                    return top[id].acceptClick();
+                }
+            });
+        };
+        function callback() {
+            learun.reload();
+        }
+    </script>
+</head>
+<body>
+    <div id="pageayout" class="border" style="overflow: auto; padding: 0px;">
+        <div id='calendar' class="calendar" style="margin: 10px;background: #fff; "></div>
+    </div>
+</body>
+</html>

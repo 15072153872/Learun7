@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "系统模块翻译";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<div class="lr-layout lr-layout-left-center" id="lr_layout">
+    <div class="lr-layout-left">
+        <div class="lr-layout-wrap">
+            <div class="lr-layout-title">功能目录</div>
+            <div class="lr-layout-body" id="module_tree"></div>
+        </div>
+    </div>
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap">
+            <div class="lr-layout-title">
+                功能信息 - <span id="titleinfo">未选择功能</span>
+            </div>
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-right">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm" learun-authorize="yes">
+                        <a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</a>
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-body" id="gridtable">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Html.AppendJsFile("/Areas/LR_LGManager/Views/LGMap/SystemModuleLG.js")

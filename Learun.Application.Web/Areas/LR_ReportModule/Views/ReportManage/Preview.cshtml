@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "预览页面";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+@*<script src="~/Content/echarts/echarts.js"></script>*@
+
+@Html.AppendCssFile("/Views/LR_Content/style/lr-reportTemplate.css")
+@Html.AppendCssFile("/Content/static/css/main.css")
+<style>
+    canvas {
+        height: 800px;
+    }
+</style>
+
+<div class="lr-layout ui-report">
+    <div class="lr-layout-center">
+        <div id="report-pane" style="overflow: auto;box-shadow: 0 1px 3px rgba(0,0,0,0.2);border-radius: 0;border: 1px solid #cfcfcf;padding: 30px;padding-top: 10px;background-color: #ffffff;">
+            <span id="moduleURL" style="display:none; color: white"></span>
+        </div>
+    </div>
+</div>
+
+<script src="/Content/echarts/echarts.js"></script>
+<script src="/Content/echarts/extension/echarts-gl.min.js"></script>
+<script src="/Content/echarts/extension/ecStat.min.js"></script>
+<script src="/Content/echarts/extension/dataTool.min.js"></script>
+
+<script src="/Content/echarts/extension/world.js"></script>
+<script src="/Content/echarts/extension/bmap.min.js"></script>
+<script src="/Content/echarts/extension/simplex.js"></script>
+
+<script src="/Content/echarts/extension/simplex.js"></script>
+
+
+<script src="/Content/static/js/citymap.js"></script>
+<script src="/Content/echarts/charts_comm.js"></script>
+
+@Html.AppendJsFile("/Views/LR_Content/script/lr-chartshelper.js")
+
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+        if (request('type') == "preview") {
+            $("#moduleURL").html("/LR_ReportModule/ReportManage/Preview?reportId=" + request('reportId') + "&queryJson=" + request('queryJson')).show();
+        }
+
+
+        $.LoadReport({
+            url: top.$.rootUrl + "/LR_ReportModule/ReportManage/GetReportData?reportId=" + request('reportId') + "&queryJson=" + request('queryJson'),
+            element: $("#report-pane")
+
+        });
+
+
+    });
+</script>
